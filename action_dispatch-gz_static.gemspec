@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 Gem::Specification.new do |gem|
-  gem.name          = "action_dispatch-gzstatic"
+  gem.name          = "action_dispatch-gz_static"
   gem.version       = '0.0.1'
   gem.authors       = ["Jonathan Baudanza"]
   gem.email         = ["jon@jonb.org"]

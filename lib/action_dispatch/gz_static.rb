@@ -4,6 +4,8 @@ require 'rack/mime'
 require 'rack/file'
 require 'active_support/core_ext/uri'
 
+require 'action_dispatch/gz_railtie' if defined?(Rails)
+
 module ActionDispatch
   class GzStatic
     def initialize(app, root, cache_control=nil)

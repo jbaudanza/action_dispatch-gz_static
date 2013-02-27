@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require 'rbconfig'
 require 'active_support'
-require 'gz_static'
+require 'action_dispatch/gz_static'
 require 'rack/mock'
 require 'zlib'
 
