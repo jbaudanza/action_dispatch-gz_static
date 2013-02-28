@@ -11,7 +11,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency('actionpack', '>= 3.1.0', '< 4')
   gem.add_dependency('railties', '>= 3.1.0', '< 4')
 
-  gem.files         = `git ls-files`.split($/)
+  gem.files         = `git ls-files`.split($/).collect{ |str| str[0] == '"' ? eval(str) : str }
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
