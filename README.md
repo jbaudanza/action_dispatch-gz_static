@@ -12,6 +12,11 @@ ActionDispatch::GzStatic is a better solution that using Rack::Deflater on your
 static assets, because this has the undesirable side effect of recompressing
 assets that are already compressed, such as images.
 
+However, this should not take the place of Rack::Deflater because compressing other
+content types such as text/html and application/json are still valid. To get the 
+best of both worlds add the no-transform header to binary objects, which is exactly
+what the [heroku-deflater](https://github.com/romanbsd/heroku-deflater) gem does.
+
 ## Installation
 
 Add this line to your application's Gemfile:
