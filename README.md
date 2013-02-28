@@ -1,29 +1,28 @@
-# Rails::Gzstatic
+# ActionDispatch::GzStatic
 
-TODO: Write a gem description
+ActionDispatch::GzStatic is a derivative of ActionDispatch::Static, that has
+been modified to serve the .gz files that are created by the Rails asset
+precompiler.
+
+If you are using Rails to serve static assets in production, and
+you are using the asset precompiler, then it is probably a good idea to use this
+gem. If you running on Heroku's Cedar stack, this includes you.
+
+ActionDispatch::GzStatic is a better solution that using Rack::Deflater on your
+static assets, because this has the undesirable side effect of recompressing
+assets that are already compressed, such as images.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'rails-gzstatic'
+    gem 'action_dispatch-gz_static'
 
-And then execute:
+Add this to application.rb:
 
-    $ bundle
+    # The railtie initializer will look for ActionDispatch::Static, and swap it
+    # with ActionDispatch::GzStatic
+    config.serve_static_assets = true
 
-Or install it yourself as:
-
-    $ gem install rails-gzstatic
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+    # This isn't required, but is generally a good idea.
+    config.static_cache_control = "public, max-age=#{1.month.to_i}"

@@ -4,9 +4,9 @@ Gem::Specification.new do |gem|
   gem.version       = '0.0.1'
   gem.authors       = ["Jonathan Baudanza"]
   gem.email         = ["jon@jonb.org"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.description   = %q{Serves the .gz files that are created by the asset precompiler}
+  gem.summary       = %q{Serves the .gz files that are created by the asset precompiler}
+  gem.homepage      = "https://github.com/jbaudanza/action_dispatch-gz_static"
 
   gem.add_dependency('actionpack', '>= 3.1.0', '< 4')
   gem.add_dependency('railties', '>= 3.1.0', '< 4')
