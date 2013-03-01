@@ -10,7 +10,9 @@ gem. If you running on Heroku's Cedar stack, this includes you.
 
 ActionDispatch::GzStatic is a better solution that using Rack::Deflater on your
 static assets, because this has the undesirable side effect of recompressing
-assets that are already compressed, such as images.
+assets that are already compressed, such as images. It is still a good idea to
+use Rack::Deflater for your app responses, but it should be positioned after
+Rack::GzStatic in the middleware stack.
 
 ## Installation
 
