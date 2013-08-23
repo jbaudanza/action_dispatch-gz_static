@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 Gem::Specification.new do |gem|
   gem.name          = "action_dispatch-gz_static"
-  gem.version       = '0.0.2'
+  gem.version       = '0.0.3'
   gem.authors       = ["Jonathan Baudanza"]
   gem.email         = ["jon@jonb.org"]
   gem.description   = %q{Serves the .gz files that are created by the asset precompiler}
