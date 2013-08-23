@@ -6,7 +6,7 @@ precompiler.
 
 If you are using Rails to serve static assets in production, and
 you are using the asset precompiler, then it is probably a good idea to use this
-gem. If you running on Heroku's Cedar stack, this includes you.
+gem. If you are running on Heroku's Cedar stack, this includes you.
 
 ActionDispatch::GzStatic is a better solution that using Rack::Deflater on your
 static assets, because this has the undesirable side effect of recompressing
