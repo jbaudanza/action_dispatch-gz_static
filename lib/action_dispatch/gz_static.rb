@@ -12,6 +12,14 @@ module ActionDispatch
       @app           = app
       @root          = root.chomp('/')
       @compiled_root = /^#{Regexp.escape(@root)}/
+
+      # I wish there was a better way to do this. Rack::File changed its
+      # interface after 1.4.1 and I don't know of a way to sniff out the change
+      # without comparing the gem version
+      if Gem.loaded_specs['rack'].version > Gem::Version.new('1.4.1')
+        cache_control = {'Cache-Control' => cache_control}
+      end
+
       @file_server   = ::Rack::File.new(@root, cache_control)
     end
 
