@@ -14,6 +14,11 @@ assets that are already compressed, such as images. It is still a good idea to
 use Rack::Deflater for your app responses, but it should be positioned after
 Rack::GzStatic in the middleware stack.
 
+However, this should not take the place of Rack::Deflater because compressing other
+content types such as text/html and application/json are still valid. To get the 
+best of both worlds add the no-transform header to binary objects, which is exactly
+what the [heroku-deflater](https://github.com/romanbsd/heroku-deflater) gem does.
+
 ## Installation
 
 Add this line to your application's Gemfile:
